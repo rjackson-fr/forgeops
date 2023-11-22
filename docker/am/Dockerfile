@@ -11,3 +11,6 @@ WORKDIR /home/forgerock
 # If you want to debug AM uncomment these lines:
 #ENV JPDA_TRANSPORT=dt_socket
 #ENV JPDA_ADDRESS *:9009
+
+COPY --chown=forgerock:root server.xml /usr/local/tomcat/conf/server.xml
+EXPOSE 443
