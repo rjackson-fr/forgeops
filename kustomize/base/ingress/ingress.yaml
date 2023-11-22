@@ -26,13 +26,13 @@ spec:
   - host: $(FQDN)
     http:
       paths:
-      - backend:
-          service:
-            name: am
-            port:
-              number: 80
-        path: /am
-        pathType: Prefix
+      # - backend:
+      #     service:
+      #       name: am
+      #       port:
+      #         number: 80
+      #   path: /am
+      #   pathType: Prefix
 
       - backend:
           service:
@@ -141,3 +141,44 @@ spec:
               number: 8080
         path: /ig(/|$)(.*)
         pathType: ImplementationSpecific
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    # haproxy.router.openshift.io/cookie_name: route
+    cert-manager.io/cluster-issuer: $(CERT_ISSUER)
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # CORS is now set in the AM and IDM configurations
+    nginx.ingress.kubernetes.io/enable-cors: "false"
+    nginx.ingress.kubernetes.io/body-size: "64m"
+    nginx.ingress.kubernetes.io/send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-body-size: "64m"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "16k"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-ForgeRock-TransactionId $req_id;
+      proxy_set_header X-ForgeRock-TransactionId $req_id;
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  name: forgerock-https
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: $(FQDN)
+    http:
+      paths:
+      - backend:
+          service:
+            name: am
+            port:
+              number: 8443
+        path: /am
+        pathType: Prefix
+  tls:
+  - hosts:
+    - $(FQDN)
+    secretName: sslcert
