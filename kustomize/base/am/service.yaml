@@ -8,6 +8,10 @@ spec:
     port: 80
     protocol: TCP
     targetPort: 8081
+  - name: am-https
+    port: 443
+    protocol: TCP
+    targetPort: 8443
   selector:
     app: am
   type: ClusterIP
