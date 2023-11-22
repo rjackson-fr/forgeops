@@ -125,6 +125,8 @@ spec:
           subPath: amtruststore
         - name: am-secrets
           mountPath: /var/run/secrets/am
+        - name: https
+          mountPath: /var/run/secrets/https
         - name: amster-key
           mountPath: /var/run/secrets/amster
         - name: fbc
@@ -143,6 +145,11 @@ spec:
               name: am-passwords
           - secret:
               name: am-keystore
+      - name: https
+        projected:
+          sources:
+          - secret:
+              name: https
       - name: amster-key
         secret:
           secretName: amster
