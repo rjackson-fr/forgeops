@@ -34,29 +34,29 @@ spec:
       #   path: /am
       #   pathType: Prefix
 
-      - backend:
-          service:
-            name: idm
-            port:
-              number: 80
-        path: /openidm
-        pathType: Prefix
+      # - backend:
+      #     service:
+      #       name: idm
+      #       port:
+      #         number: 80
+      #   path: /openidm
+      #   pathType: Prefix
 
-      - backend:
-          service:
-            name: idm
-            port:
-              number: 80
-        path: /upload
-        pathType: Prefix
+      # - backend:
+      #     service:
+      #       name: idm
+      #       port:
+      #         number: 80
+      #   path: /upload
+      #   pathType: Prefix
 
-      - backend:
-          service:
-            name: idm
-            port:
-              number: 80
-        path: /export
-        pathType: Prefix
+      # - backend:
+      #     service:
+      #       name: idm
+      #       port:
+      #         number: 80
+      #   path: /export
+      #   pathType: Prefix
 
       - backend:
           service:
@@ -66,13 +66,13 @@ spec:
         path: /admin
         pathType: Prefix
 
-      - backend:
-          service:
-            name: idm
-            port:
-              number: 80
-        path: /openicf
-        pathType: Prefix
+      # - backend:
+      #     service:
+      #       name: idm
+      #       port:
+      #         number: 80
+      #   path: /openicf
+      #   pathType: Prefix
 
       - backend:
           service:
@@ -175,8 +175,39 @@ spec:
           service:
             name: am
             port:
-              number: 8443
+              number: 443
         path: /am
+        pathType: Prefix
+      - backend:
+          service:
+            name: idm
+            port:
+              number: 443
+        path: /openidm
+        pathType: Prefix
+
+      - backend:
+          service:
+            name: idm
+            port:
+              number: 443
+        path: /upload
+        pathType: Prefix
+
+      - backend:
+          service:
+            name: idm
+            port:
+              number: 443
+        path: /export
+        pathType: Prefix
+      
+      - backend:
+          service:
+            name: idm
+            port:
+              number: 443
+        path: /openicf
         pathType: Prefix
   tls:
   - hosts:
