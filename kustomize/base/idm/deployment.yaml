@@ -94,7 +94,8 @@ spec:
             - name: X-OpenIDM-NoSession
               value: "true"
             path: /openidm/info/ping
-            port: 8080
+            port: 8443
+            scheme: HTTPS
           initialDelaySeconds: 120
           periodSeconds: 60
           timeoutSeconds: 5
@@ -108,7 +109,8 @@ spec:
             - name: X-OpenIDM-NoSession
               value: "true"
             path: /openidm/info/ping
-            port: 8080
+            port: 8443
+            scheme: HTTPS
           initialDelaySeconds: 30
           periodSeconds: 30
           timeoutSeconds: 5

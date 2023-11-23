@@ -92,13 +92,15 @@ spec:
         startupProbe:
           httpGet:
             path: /am/json/health/live
-            port: 8080
+            port: 8443
+            scheme: HTTPS
           failureThreshold: 40
           periodSeconds: 10
         livenessProbe:
           httpGet:
             path: /am/json/health/live
-            port: 8080
+            port: 8443
+            scheme: HTTPS
           initialDelaySeconds: 30
           periodSeconds: 30
           timeoutSeconds: 5
@@ -108,7 +110,8 @@ spec:
         readinessProbe:
           httpGet:
             path: /am/json/health/ready
-            port: 8080
+            port: 8443
+            scheme: HTTPS
           initialDelaySeconds: 20
           periodSeconds: 10
           timeoutSeconds: 5
