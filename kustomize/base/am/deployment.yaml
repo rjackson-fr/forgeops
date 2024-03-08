@@ -125,6 +125,8 @@ spec:
           subPath: amtruststore
         - name: am-secrets
           mountPath: /var/run/secrets/am
+        - name: mtls-secrets
+          mountPath: /var/run/secrets/mtls
         - name: amster-key
           mountPath: /var/run/secrets/amster
         - name: fbc
@@ -143,6 +145,24 @@ spec:
               name: am-passwords
           - secret:
               name: am-keystore
+      - name: mtls-secrets
+        projected:
+          sources:
+          - secret:
+              name: cts-mtls
+              items: 
+                - key: keystore.jks
+                  path: cts-keystore.jks
+          - secret:
+              name: config-mtls
+              items: 
+                - key: keystore.jks
+                  path: config-keystore.jks
+          - secret:
+              name: identity-mtls
+              items: 
+                - key: keystore.jks
+                  path: identity-keystore.jks
       - name: amster-key
         secret:
           secretName: amster
