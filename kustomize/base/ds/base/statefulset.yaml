@@ -169,6 +169,8 @@ spec:
           name: truststore
         - mountPath: /var/run/secrets/keys
           name: keys
+        - mountPath: /var/run/secrets/keys/truststore
+          name: mtls
         - name: cloud-credentials-cache
           mountPath: /var/run/secrets/cloud-credentials-cache
       securityContext:
@@ -189,6 +191,29 @@ spec:
         secret:
           defaultMode: 420
           secretName: ds-ssl-keypair
+      - name: mtls
+        projected:
+          sources:
+          - secret:
+              name: cts-mtls
+              items: 
+                - key: tls.crt
+                  path: cts-mtls.pem
+          - secret:
+              name: identity-mtls
+              items: 
+                - key: tls.crt
+                  path: identity-mtls.pem
+          - secret:
+              name: config-mtls
+              items: 
+                - key: tls.crt
+                  path: config-mtls.pem
+          - secret:
+              name: ds-ssl-keypair
+              items: 
+                - key: tls.crt
+                  path: ds-ssl.pem
       - name: admin-password
         secret:
           defaultMode: 420
