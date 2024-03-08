@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "KeyStoreSecretStore",
+    "entityId" : "default/cts-mtls/mappings/am.cts.mtls.cert",
+    "uid" : "ou=am.cts.mtls.cert,ou=mappings,ou=cts-mtls,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams" : { },
+    "ou" : [
+      "am.cts.mtls.cert"
+    ]
+  },
+  "data" : {
+    "_id" : "default/cts-mtls/mappings/am.cts.mtls.cert",
+    "_type" : {
+      "_id" : "KeyStoreSecretStore",
+      "name" : "KeyStoreSecretStore",
+      "collection" : false
+    },
+    "secretId" : "am.cts.mtls.cert",
+    "aliases" : [
+      "certificate"
+    ]
+  }
+}

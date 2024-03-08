@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "KeyStoreSecretStore",
+    "entityId" : "default/identity-mtls/mappings/am.identity.repository.identity.cert",
+    "uid" : "ou=am.identity.repository.identity.cert,ou=mappings,ou=identity-mtls,ou=default,ou=OrganizationConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams" : { },
+    "ou" : [
+      "am.identity.repository.identity.cert"
+    ]
+  },
+  "data" : {
+    "_id" : "default/identity-mtls/mappings/am.identity.repository.identity.cert",
+    "_type" : {
+      "_id" : "KeyStoreSecretStore",
+      "name" : "KeyStoreSecretStore",
+      "collection" : false
+    },
+    "secretId" : "am.identity.repository.identity.cert",
+    "aliases" : [
+      "certificate"
+    ]
+  }
+}
