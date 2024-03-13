@@ -148,8 +148,15 @@ spec:
       - name: fbc
         emptyDir: {}
       - name: idm-secrets
-        secret:
-          secretName: idm
+        projected:
+          sources:
+          - secret:
+              name: idm
+          - secret:
+              name: openidm-mtls
+              items: 
+                - key: keystore.jks
+                  path: mtls-keystore.jks
       - name: new-truststore
         emptyDir: {}
       - name: truststore
