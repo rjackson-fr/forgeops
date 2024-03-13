@@ -2,7 +2,10 @@
     "embedded" : false,
     "maxConnectionAttempts" : 5,
     "security" : {
-        "keyManager" : "none",
+        "keyManager" : "file",
+        "fileBasedKeyManagerType" : "JKS",
+        "fileBasedKeyManagerFile" : "/var/run/secrets/idm/mtls-keystore.jks",
+        "fileBasedKeyManagerPassword" : "&{openidm.keystore.password}",
         "trustManager" : "file",
         "fileBasedTrustManagerType" : "JKS",
         "fileBasedTrustManagerFile" : "&{openidm.truststore.location}",
@@ -12,7 +15,7 @@
         "bind" : {
             "connectionSecurity" : "ssl",
             "connectionPoolSize" : 50,
-            "sslCertAlias": "client-cert",
+            "sslCertAlias": "certificate",
             "availabilityCheckTimeoutMilliSeconds" : 2000,
             "availabilityCheckIntervalSeconds" : 30,
             "heartBeatIntervalSeconds" : 60,
