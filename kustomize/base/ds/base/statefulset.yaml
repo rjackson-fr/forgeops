@@ -210,6 +210,11 @@ spec:
                 - key: tls.crt
                   path: config-mtls.pem
           - secret:
+              name: openidm-mtls
+              items: 
+                - key: tls.crt
+                  path: openidm-mtls.pem
+          - secret:
               name: ds-ssl-keypair
               items: 
                 - key: tls.crt
