@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "KeyStoreSecretStore",
+    "entityId" : "default/config-mtls",
+    "uid" : "ou=config-mtls,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams" : { },
+    "ou" : [
+      "config-mtls"
+    ]
+  },
+  "data" : {
+    "_id" : "default/config-mtls",
+    "_type" : {
+      "_id" : "KeyStoreSecretStore",
+      "name" : "KeyStoreSecretStore",
+      "collection" : false
+    },
+    "storePassword" : "storepass",
+    "providerName" : null,
+    "file" : "/var/run/secrets/mtls/config-keystore.jks",
+    "storetype" : "JKS",
+    "leaseExpiryDuration" : 5,
+    "keyEntryPassword" : "storepass"
+  }
+}
