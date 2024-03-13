@@ -71,6 +71,11 @@ dn: ${dn}
 changetype: modify
 replace: userPassword
 userPassword: ${enc_pwd}
+
+dn: ${dn}
+changetype: modify
+add: objectClass
+objectClass: ds-certificate-user
 EOF
     rm "${file}"
     mv "${file}.tmp" "${file}"
