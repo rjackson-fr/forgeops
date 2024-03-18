@@ -291,6 +291,7 @@
       "com.sun.identity.saml.xmlsig.storepass=%BASE_DIR%/security/secrets/default/.storepass",
       "com.sun.identity.session.repository.enableEncryption=false",
       "org.forgerock.services.default.store.min.connections=",
+      "org.forgerock.services.resourcesets.store.mtls.enabled=true",
       "com.sun.identity.password.deploymentDescriptor=%SERVER_URI%",
       "com.iplanet.am.smtpport=25",
       "org.forgerock.services.uma.labels.store.heartbeat=10",
