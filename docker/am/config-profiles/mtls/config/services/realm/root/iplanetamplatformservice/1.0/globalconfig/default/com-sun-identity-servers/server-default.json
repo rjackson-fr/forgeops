@@ -41,25 +41,22 @@
       "com.sun.identity.authentication.ocsp.responder.url=",
       "com.iplanet.am.ldap.connection.ldap.error.codes.retries=80,81,91",
       "org.forgerock.openam.idrepo.ldapv3.proxyauth.passwordreset.adminRequest=isAdminPasswordChangeRequest",
-      {
-        "$string" : "org.forgerock.services.umaaudit.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}"
-      },
       "com.sun.am.session.caseInsensitiveDN=true",
       "openam.deserialisation.classes.whitelist=com.iplanet.dpro.session.DNOrIPAddressListTokenRestriction,com.sun.identity.common.CaseInsensitiveHashMap,com.sun.identity.common.CaseInsensitiveHashSet,com.sun.identity.common.CaseInsensitiveKey,com.sun.identity.common.configuration.ServerConfigXML,com.sun.identity.common.configuration.ServerConfigXML$DirUserObject,com.sun.identity.common.configuration.ServerConfigXML$ServerGroup,com.sun.identity.common.configuration.ServerConfigXML$ServerObject,com.sun.identity.console.base.model.SMSubConfig,com.sun.identity.console.session.model.SMSessionData,com.sun.identity.console.user.model.UMUserPasswordResetOptionsData,com.sun.identity.shared.datastruct.OrderedSet,com.sun.xml.bind.util.ListImpl,com.sun.xml.bind.util.ProxyListImpl,java.lang.Boolean,java.lang.Integer,java.lang.Number,java.lang.StringBuffer,java.net.InetAddress,java.security.cert.Certificate,java.security.cert.Certificate$CertificateRep,java.util.ArrayList,java.util.Collections$EmptyMap,java.util.Collections$EmptySet,java.util.Collections$SingletonList,java.util.HashMap,java.util.HashSet,java.util.LinkedHashSet,java.util.Locale,org.forgerock.openam.authentication.service.protocol.RemoteCookie,org.forgerock.openam.authentication.service.protocol.RemoteHttpServletRequest,org.forgerock.openam.authentication.service.protocol.RemoteHttpServletResponse,org.forgerock.openam.authentication.service.protocol.RemoteServletRequest,org.forgerock.openam.authentication.service.protocol.RemoteServletResponse,org.forgerock.openam.authentication.service.protocol.RemoteSession,org.forgerock.openam.dpro.session.NoOpTokenRestriction,org.forgerock.openam.dpro.session.ProofOfPossessionTokenRestriction",
       "openam.authentication.ignore_goto_during_logout=false",
       "com.iplanet.services.configpath=%BASE_DIR%",
+      "org.forgerock.services.uma.labels.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}",
       "com.iplanet.am.session.invalidsessionmaxtime=3",
       "com.iplanet.am.util.xml.validating=off",
       "org.forgerock.services.uma.labels.store.max.connections=2",
       "com.iplanet.services.stats.directory=%BASE_DIR%/var/stats",
       "com.sun.identity.saml.xmlsig.signatureprovider.class=@XML_SIGNATURE_PROVIDER@",
       "org.forgerock.services.resourcesets.store.heartbeat=10",
+      "org.forgerock.services.resourcesets.store.password=&{am.stores.uma.password|&{am.stores.application.password}}",
       "com.iplanet.services.debug.directory=%BASE_DIR%/var/debug",
       "openam.retained.http.request.headers=X-DSAMEVersion",
-      {
-        "$string" : "org.forgerock.services.uma.pendingrequests.store.password=&{am.stores.uma.password|&{am.stores.application.password}}"
-      },
       "com.sun.identity.url.readTimeout=30000",
+      "org.forgerock.services.umaaudit.store.password=&{am.stores.uma.password|&{am.stores.application.password}}",
       "org.forgerock.services.resourcesets.store.location=external",
       "com.iplanet.am.buildDate=2020-October-06 07:11",
       "org.forgerock.services.uma.pendingrequests.store.starttls.enabled=",
@@ -70,10 +67,14 @@
       "org.forgerock.services.cts.store.ttlsupport.exclusionlist=SESSION",
       "com.sun.identity.plugin.log.class=@LOG_PROVIDER_CLASS@",
       "com.iplanet.am.session.httpSession.enabled=true",
+      {
+        "$string" : "org.forgerock.services.cts.store.loginid=&{am.stores.cts.username|uid=openam_cts,ou=admins,ou=famrecords,ou=openam-session,ou=tokens}"
+      },
       "com.iplanet.am.smtphost=localhost",
       "com.sun.identity.saml.xmlsig.passwordDecoder=@PASSWORD_DECODER_CLASS@",
       "com.iplanet.am.session.client.polling.enable=false",
       "com.iplanet.am.profile.port=%SERVER_PORT%",
+      "org.forgerock.services.uma.pendingrequests.store.password=&{am.stores.uma.password|&{am.stores.application.password}}",
       "org.forgerock.services.uma.pendingrequests.store.heartbeat=10",
       "com.sun.identity.authentication.uniqueCookieName=sunIdentityServerAuthNServer",
       "org.forgerock.openam.httpclienthandler.system.clients.pool.ttl=-1",
@@ -82,9 +83,7 @@
       "org.forgerock.openam.smtp.system.socket.read.timeout=10000",
       "com.iplanet.am.locale=en_US",
       "org.forgerock.openam.encryption.key.digest=SHA1",
-      {
-        "$string" : "org.forgerock.services.resourcesets.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}"
-      },
+      "org.forgerock.services.umaaudit.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}",
       "org.forgerock.openam.session.stateless.signing.allownone=false",
       "org.forgerock.am.auth.chains.authindexuser.strict=false",
       "org.forgerock.openam.encryption.key.size=128",
@@ -111,14 +110,8 @@
       "org.forgerock.openam.timerpool.shutdown.retry.multiplier=1.5",
       "com.iplanet.am.server.host=@SERVER_HOST@",
       "dynamic.datastore.creation.enabled=false",
-      {
-        "$string" : "org.forgerock.services.uma.labels.store.password=&{am.stores.uma.password|&{am.stores.application.password}}"
-      },
       "com.sun.identity.am.cookie.check=false",
       "org.forgerock.openam.core.resource.lookup.cache.enabled=true",
-      {
-        "$string" : "org.forgerock.services.uma.pendingrequests.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}"
-      },
       "org.forgerock.services.cts.store.heartbeat=10",
       "securidHelper.ports=58943",
       "org.forgerock.services.umaaudit.store.location=external",
@@ -128,9 +121,14 @@
       "com.sun.identity.sm.enableDataStoreNotification=false",
       "com.sun.identity.plugin.monitoring.agent.class=@MONAGENT_PROVIDER_CLASS@",
       "com.iplanet.am.server.protocol=@SERVER_PROTO@",
+      "org.forgerock.services.resourcesets.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}",
       "com.iplanet.security.encryptor=com.iplanet.services.util.JCEEncryption",
       "org.forgerock.services.umaaudit.store.root.suffix=",
       "com.sun.identity.cookie.httponly=true",
+      {
+        "$string" : "org.forgerock.services.cts.store.password=&{am.stores.cts.password}"
+      },
+      "org.forgerock.services.uma.pendingrequests.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}",
       "org.forgerock.openam.sso.providers.list=org.forgerock.openidconnect.ssoprovider.OpenIdConnectSSOProvider",
       "com.iplanet.am.pcookie.name=DProPCookie",
       "org.forgerock.services.cts.store.max.connections=100",
@@ -158,37 +156,28 @@
       "com.iplanet.am.sdk.cache.entry.user.expire.time=15",
       "org.forgerock.openam.session.service.access.persistence.caching.maxsize=5000",
       "com.iplanet.am.cookie.c66Encode=true",
+      "org.forgerock.services.resourcesets.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}",
       "com.iplanet.am.event.connection.delay.between.retries=3000",
       "org.forgerock.openam.radius.server.context.cache.size=5000",
       "com.iplanet.am.jssproxy.checkSubjectAltName=false",
-      {
-        "$string" : "org.forgerock.services.resourcesets.store.password=&{am.stores.uma.password|&{am.stores.application.password}}"
-      },
       {
         "$string" : "org.forgerock.http.TrustTransactionHeader=&{platform.trust.transaction.header|false}"
       },
       "org.forgerock.services.cts.reaper.cache.size=5000000",
       "com.iplanet.services.debug.level=error",
       "org.forgerock.services.cts.store.location=external",
-      "org.forgerock.services.cts.store.password=&{am.stores.cts.password}",
       "com.sun.identity.crl.cache.directory.searchattr=",
       "com.sun.am.event.notification.expire.time=5",
+      "org.forgerock.services.umaaudit.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}",
       "org.forgerock.openam.httpclienthandler.system.clients.max.connections=64",
-      "org.forgerock.services.resourcesets.store.starttls.enabled=",
-      {
-        "$string" : "org.forgerock.services.uma.pendingrequests.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}"
-      },
       "openam.auth.version.header.enabled=false",
       "org.forgerock.openam.timerpool.shutdown.retry.limit=3",
+      "org.forgerock.services.resourcesets.store.starttls.enabled=false",
       "org.forgerock.openam.session.service.persistence.deleteAsynchronously=true",
       "com.sun.identity.client.notification.url=%SERVER_PROTO%://%SERVER_HOST%:%SERVER_PORT%/%SERVER_URI%/notificationservice",
       "com.iplanet.security.SSLSocketFactoryImpl=com.sun.identity.shared.ldap.factory.JSSESocketFactory",
       "com.sun.identity.session.repository.enableAttributeCompression=false",
       "org.forgerock.openam.httpclienthandler.system.nonProxyHosts=localhost,127.*,[::1],0.0.0.0,[::0]",
-      "org.forgerock.services.cts.store.ssl.enabled=&{am.stores.cts.ssl.enabled|false}",
-      {
-        "$string" : "org.forgerock.services.uma.labels.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}"
-      },
       "org.forgerock.allow.http.client.debug=false",
       "org.forgerock.openam.auth.transactionauth.returnErrorOnAuthFailure=false",
       "org.forgerock.services.cts.store.mtls.enabled=true",
@@ -203,19 +192,10 @@
       "org.forgerock.services.uma.labels.store.starttls.enabled=",
       "org.forgerock.services.cts.store.starttls.enabled=false",
       "com.iplanet.am.event.connection.num.retries=3",
-      {
-        "$string" : "org.forgerock.services.umaaudit.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}"
-      },
       "com.iplanet.am.session.agentSessionIdleTime=1440",
       "org.forgerock.openam.idm.attribute.names.lower.case=false",
       "com.sun.identity.authentication.special.users=cn=dsameuser,ou=DSAME Users,%ROOT_SUFFIX%|cn=amService-UrlAccessAgent,ou=DSAME Users,%ROOT_SUFFIX%",
       "org.forgerock.openam.httpclienthandler.system.clients.reuse.connections.enabled=true",
-      {
-        "$string" : "org.forgerock.services.uma.labels.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}"
-      },
-      {
-        "$string" : "org.forgerock.services.umaaudit.store.password=&{am.stores.uma.password|&{am.stores.application.password}}"
-      },
       "com.sun.identity.plugin.configuration.class=@CONFIGURATION_PROVIDER_CLASS@",
       "org.forgerock.openam.console.autocomplete.enabled=true",
       "org.forgerock.openam.introspect.token.query.param.allowed=true",
@@ -227,10 +207,6 @@
       "org.forgerock.openam.xui.user.session.validation.enabled=true",
       "com.sun.identity.authentication.multiple.tabs.used=false",
       "org.forgerock.services.cts.store.ttlsupport.enabled=true",
-      "org.forgerock.services.cts.store.loginid=&{am.stores.cts.username|uid=openam_cts,ou=admins,ou=famrecords,ou=openam-session,ou=tokens}",
-      {
-        "$string" : "org.forgerock.services.umaaudit.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}"
-      },
       "openam.auth.destroy_session_after_upgrade=true",
       "org.forgerock.openam.session.stateless.encryption.method=A128CBC-HS256",
       "com.sun.identity.plugin.session.class=@SESSION_PROVIDER_CLASS@",
@@ -248,27 +224,26 @@
       "com.sun.identity.crl.cache.directory.port=",
       "com.sun.identity.policy.resultsCacheResourceCap=20",
       "com.sun.identity.crl.cache.directory.mtlsenabled=false",
+      "org.forgerock.services.uma.labels.store.password=&{am.stores.uma.password|&{am.stores.application.password}}",
       "org.forgerock.openam.slf4j.enableTraceInMessage=false",
       "org.forgerock.services.resourcesets.store.root.suffix=",
       "org.forgerock.services.umaaudit.store.heartbeat=10",
-      {
-        "$string" : "org.forgerock.services.uma.labels.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}"
-      },
       "com.sun.identity.policy.resultsCacheMaxSize=10000",
-      "org.forgerock.services.cts.store.directory.name=&{am.stores.cts.servers|ds-cts-0.ds-cts:1389}",
+      "org.forgerock.services.resourcesets.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}",
+      "org.forgerock.services.uma.pendingrequests.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}",
       "com.iplanet.am.notification.threadpool.size=10",
       "com.sun.identity.sm.cache.ttl.enable=false",
+      "org.forgerock.services.umaaudit.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}",
       "com.iplanet.am.ldap.connection.num.retries=3",
+      "org.forgerock.services.uma.labels.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}",
       "com.iplanet.am.cookie.secure=true",
-      {
-        "$string" : "org.forgerock.services.resourcesets.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}"
-      },
       "com.iplanet.am.cookie.name=iPlanetDirectoryPro",
       "com.sun.identity.session.repository.enableCompression=false",
       "org.forgerock.openam.authentication.forceAuth.enabled=true",
       "org.forgerock.openam.session.stateless.rsa.padding=RSA-OAEP-256",
       "org.forgerock.services.resourcesets.store.max.connections=10",
       "com.iplanet.am.services.deploymentDescriptor=",
+      "org.forgerock.services.uma.labels.store.loginid=&{am.stores.uma.username|uid=am-config,ou=admins,ou=am-config}",
       "openam.forbidden.to.copy.request.headers=connection",
       "org.forgerock.openam.notifications.agents.enabled=true",
       "com.iplanet.am.cookie.encode=false",
@@ -282,19 +257,23 @@
       "org.forgerock.am.auth.trees.authenticate.identified.identity=false",
       "org.forgerock.services.uma.pendingrequests.store.location=external",
       "org.forgerock.openam.encryption.key.iterations=10000",
-      {
-        "$string" : "org.forgerock.services.resourcesets.store.directory.name=&{am.stores.uma.servers|&{am.stores.user.servers}}"
-      },
       "com.sun.identity.saml.xmlsig.keypass=%BASE_DIR%/security/secrets/default/.keypass",
       "com.sun.identity.crl.cache.directory.user=",
       "openam.cdm.default.charset=UTF-8",
       "com.sun.identity.saml.xmlsig.storepass=%BASE_DIR%/security/secrets/default/.storepass",
       "com.sun.identity.session.repository.enableEncryption=false",
+      {
+        "$string" : "org.forgerock.services.cts.store.directory.name=&{am.stores.cts.servers|ds-cts-0.ds-cts:1389}"
+      },
       "org.forgerock.services.default.store.min.connections=",
       "org.forgerock.services.resourcesets.store.mtls.enabled=true",
       "com.sun.identity.password.deploymentDescriptor=%SERVER_URI%",
       "com.iplanet.am.smtpport=25",
       "org.forgerock.services.uma.labels.store.heartbeat=10",
+      "org.forgerock.services.uma.pendingrequests.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}",
+      {
+        "$string" : "org.forgerock.services.cts.store.ssl.enabled=&{am.stores.cts.ssl.enabled|false}"
+      },
       "com.sun.identity.monitoring.local.conn.server.url=service:jmx:rmi://",
       "org.forgerock.services.umaaudit.store.max.connections=10",
       "com.sun.identity.plugin.datastore.class.default=@DATASTORE_PROVIDER_CLASS@",
@@ -303,9 +282,6 @@
       "openam.oauth2.client.jwt.unreasonable.lifetime.limit.minutes=30",
       "org.forgerock.openam.httpclienthandler.system.proxy.enabled=false",
       "com.iplanet.security.SecureRandomFactoryImpl=com.iplanet.am.util.SecureRandomFactoryImpl",
-      {
-        "$string" : "org.forgerock.services.uma.pendingrequests.store.ssl.enabled=&{am.stores.uma.ssl.enabled|false}"
-      },
       "com.iplanet.am.buildRevision=e1f90a9775698f1ff471c70f9e4e476a81318494",
       "openam.retained.http.headers=X-DSAMEVersion"
     ]

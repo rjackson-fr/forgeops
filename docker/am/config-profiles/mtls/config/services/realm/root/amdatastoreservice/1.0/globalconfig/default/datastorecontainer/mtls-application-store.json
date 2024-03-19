@@ -24,7 +24,7 @@
     "mtlsSecretLabel" : "application",
     "maximumConnectionPool" : 10,
     "bindPassword" : "&{am.stores.application.password}",
-    "mtlsEnabled" : true,
+    "mtlsEnabled" : false,
     "useStartTLS" : false,
     "dataStoreEnabled" : true,
     "minimumConnectionPool" : 1,

@@ -24,7 +24,7 @@
     "mtlsSecretLabel" : "policy",
     "maximumConnectionPool" : 10,
     "bindPassword" : "&{am.stores.policy.password}",
-    "mtlsEnabled" : true,
+    "mtlsEnabled" : false,
     "useStartTLS" : false,
     "dataStoreEnabled" : true,
     "serverUrls" : {
