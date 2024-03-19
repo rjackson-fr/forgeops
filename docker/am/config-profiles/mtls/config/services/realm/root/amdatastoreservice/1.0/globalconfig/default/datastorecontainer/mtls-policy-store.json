@@ -22,17 +22,17 @@
       "collection" : false
     },
     "mtlsSecretLabel" : "policy",
-    "maximumConnectionPool" : 10,
     "bindPassword" : "&{am.stores.policy.password}",
-    "mtlsEnabled" : false,
+    "mtlsEnabled" : true,
     "useStartTLS" : false,
-    "dataStoreEnabled" : true,
+    "dataStoreEnabled" : {
+      "$bool" : "&{false|am.stores.application.enabled}"
+    },
     "serverUrls" : {
       "$list" : "&{am.stores.policy.servers}"
     },
-    "minimumConnectionPool" : 1,
     "useSsl" : {
-      "$bool" : "&{am.stores.policy.ssl.enabled|false}"
+      "$bool" : "&{am.stores.policy.ssl.enabled}"
     },
     "affinityEnabled" : false,
     "bindDN" : "&{am.stores.policy.username}"

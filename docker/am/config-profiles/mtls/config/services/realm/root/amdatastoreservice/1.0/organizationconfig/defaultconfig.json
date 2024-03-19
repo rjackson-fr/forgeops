@@ -22,7 +22,7 @@
       "name" : "amDataStoreService",
       "collection" : false
     },
-    "applicationDataStoreId" : "mtls-application-store",
-    "policyDataStoreId" : "mtls-policy-store"
+    "applicationDataStoreId" : "application-store",
+    "policyDataStoreId" : "policy-store"
   }
 }
